@@ -1,0 +1,18 @@
+meta {
+  name: Obtener estudiante por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{api_url}}/estudiantes/clyh5z3z50000y7z0w1q2w3x4
+  body: none
+}
+
+assert {
+  res.status: 200 | 404
+}
+
+notes {
+  Reemplaza el ID con un ID válido de la base de datos
+}

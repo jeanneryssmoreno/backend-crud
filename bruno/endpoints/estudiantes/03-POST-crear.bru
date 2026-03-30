@@ -1,0 +1,35 @@
+meta {
+  name: Crear nuevo estudiante
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{api_url}}/estudiantes
+  body: json
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nombre": "Juan Pérez",
+    "email": "juan.perez@example.com",
+    "telefono": "555-1234",
+    "nivel": "Principiante",
+    "especialidad": "Tenor",
+    "estado": "Activo"
+  }
+}
+
+assert {
+  res.status: 201
+}
+
+notes {
+  Crea un nuevo registro de estudiante.
+  El email debe ser único.
+  Los campos nombre y email son obligatorios.
+}

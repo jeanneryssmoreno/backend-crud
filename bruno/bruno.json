@@ -1,0 +1,9 @@
+meta {
+  name: API Estudiantes de Canto
+  type: collection
+}
+
+vars {
+  base_url: http://localhost:3000
+  api_url: {{base_url}}/api
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Actualizar estudiante
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{api_url}}/estudiantes/clyh5z3z50000y7z0w1q2w3x4
+  body: json
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nombre": "Juan Pérez Actualizado",
+    "email": "juan.nuevo@example.com",
+    "nivel": "Intermedio",
+    "especialidad": "Bajo"
+  }
+}
+
+assert {
+  res.status: 200
+}
+
+notes {
+  Actualiza un estudiante existente.
+  Reemplaza el ID con un ID válido.
+  Solo envía los campos que quieras actualizar.
+}

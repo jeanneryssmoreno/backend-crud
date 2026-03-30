@@ -1,0 +1,14 @@
+meta {
+  name: Obtener todos los estudiantes
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{api_url}}/estudiantes
+  body: none
+}
+
+assert {
+  res.status: 200
+}

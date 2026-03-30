@@ -1,0 +1,20 @@
+meta {
+  name: Eliminar estudiante
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{api_url}}/estudiantes/clyh5z3z50000y7z0w1q2w3x4
+  body: none
+}
+
+assert {
+  res.status: 200
+}
+
+notes {
+  Elimina un estudiante de la base de datos.
+  Reemplaza el ID con un ID válido.
+  Esta acción no se puede deshacer.
+}
