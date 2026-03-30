@@ -4,10 +4,32 @@
 
 html, body, #root {
   height: 100%;
+  width: 100%;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  background: #09090b;
-  color: #f4f4f5;
+  background-color: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* ── Pattern Background ─────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: 
+    radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 85%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 button, input, select { font-family: inherit; }
